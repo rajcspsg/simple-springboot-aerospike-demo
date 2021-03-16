@@ -4,7 +4,6 @@ import com.aerospike.demo.simplespringbootaerospikedemo.configuration.AerospikeC
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.aerospike.core.AerospikeTemplate;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -27,17 +26,10 @@ public class TestSpringConfig {
       AerospikeTemplate template = ctx.getBean(AerospikeTemplate.class);
     } catch (Exception e) {
       StackTraceElement[] st = e.getStackTrace();
-      if(st != null) {
-        System.out.println("st.length = " + st.length);
-      }
       Stream.of(st).forEach(System.out::println);
     } catch (ExceptionInInitializerError e) {
-      StackTraceElement[] st = e.getStackTrace();
-      if(st != null) {
-        System.out.println("st.length = " + st.length);
-      }
-      Stream.of(st).forEach(System.out::println);
+      System.out.println(e.getCause());
+      e.getCause().printStackTrace();
     }
-
   }
 }

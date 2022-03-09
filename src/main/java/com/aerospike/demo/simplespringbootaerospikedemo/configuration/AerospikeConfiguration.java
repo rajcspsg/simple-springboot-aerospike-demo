@@ -9,6 +9,7 @@ import org.springframework.data.aerospike.config.AbstractAerospikeDataConfigurat
 import org.springframework.data.aerospike.repository.config.EnableAerospikeRepositories;
 import java.util.Collection;
 import java.util.Collections;
+
 @Configuration
 @EnableConfigurationProperties(AerospikeConfigurationProperties.class)
 @EnableAerospikeRepositories(basePackageClasses = AerospikeUserRepository.class)

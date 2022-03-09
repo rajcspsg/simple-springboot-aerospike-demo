@@ -2,6 +2,7 @@ package com.aerospike.demo.simplespringbootaerospikedemo.objects;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.data.aerospike.annotation.Expiration;
 import org.springframework.data.aerospike.mapping.Document;
 import org.springframework.data.annotation.Id;
 @Data
@@ -13,4 +14,6 @@ public class User {
   private String name;
   private String email;
   private int age;
+  @Expiration
+  private long expiration;
 }
